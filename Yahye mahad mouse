@@ -1,0 +1,63 @@
+// Name yahye mahad mouse 
+///I'd =c1210301 
+
+
+import java.util.ArrayList;
+import java.util.HashSet;
+
+public class CommonElements {
+    public static ArrayList<Integer> findCommonElements(int[] array1, int[] array2) {
+        HashSet<Integer> set1 = new HashSet<>();
+        ArrayList<Integer> common = new ArrayList<>();
+
+        // Add elements of array1 to the set
+        for (int num : array1) {
+            set1.add(num);
+        }
+
+        // Check for common elements in array2
+        for (int num : array2) {
+            if (set1.contains(num)) {
+                common.add(num);
+            }
+        }
+
+        return common;
+    }
+
+    public static void main(String[] args) {
+        int[] array1 = {1, 2, 3};
+        int[] array2 = {2, 3, 4};
+        ArrayList<Integer> commonElements = findCommonElements(array1, array2);
+        System.out.println(commonElements);
+    }
+}
+
+
+
+///2
+import java.util.ArrayList;
+import java.util.HashSet;
+
+public class RemoveDuplicates {
+    public static ArrayList<Integer> removeDuplicates(int[] array) {
+        HashSet<Integer> set = new HashSet<>();
+        ArrayList<Integer> uniqueElements = new ArrayList<>();
+
+        // Add elements to set and ArrayList if not already present
+        for (int num : array) {
+            if (!set.contains(num)) {
+                set.add(num);
+                uniqueElements.add(num);
+            }
+        }
+
+        return uniqueElements;
+    }
+
+    public static void main(String[] args) {
+        int[] array = {1, 2, 2, 3, 4, 4, 5};
+        ArrayList<Integer> uniqueElements = removeDuplicates(array);
+        System.out.println(uniqueElements);
+    }
+}
